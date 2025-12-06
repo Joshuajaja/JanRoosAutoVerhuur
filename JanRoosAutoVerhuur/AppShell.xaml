@@ -8,15 +8,25 @@
     >
 
     <TabBar>
-        <Tab Title="Home" Icon="dotnet_bot.png">
+        <Tab Title="Home" Icon="mainpage.png">
             <ShellContent
                 ContentTemplate="{DataTemplate local:MainPage}"
                 Route="MainPage"/>
         </Tab>
-        <Tab Title="Home" Icon="dotnet_bot.png">
+        <Tab Title="Info" Icon="info.png">
             <ShellContent
-                ContentTemplate="{DataTemplate local:MainPage}"
-                Route="MainPage"/>
+                ContentTemplate="{DataTemplate local:Info}"
+                Route="Info"/>
+        </Tab>
+        <Tab Title="Terms" Icon="terms.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:Terms}"
+                Route="Terms"/>
+        </Tab>
+        <Tab Title="Signup" Icon="signup.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:Signup}"
+                Route="Signup"/>
         </Tab>
     </TabBar>
 </Shell>
