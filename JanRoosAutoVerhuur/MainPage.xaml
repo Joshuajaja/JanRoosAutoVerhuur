@@ -8,13 +8,36 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <Grid BackgroundColor="{StaticResource Secondary}"
-                  Margin="20,0"
-                  WidthRequest="100">
-                <Label
-                    Text="testest"/>
+            <Border StrokeShape="RoundRectangle 10,10,10,10"
+                    Margin="1,30"
+                    Stroke="{StaticResource Tertiary}"
+                    StrokeThickness="0"
+                    BackgroundColor="{StaticResource Secondary}">
+                <Grid
+                  HorizontalOptions="Fill"
+                  HeightRequest="50">
+                    <HorizontalStackLayout>
+                        <Label
+                        Text="jaa"
+                        Margin="5,0"
+                        TextColor="{StaticResource Tertiary}"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"/>
+                        <Label
+                        Text="jjhjhaa"
+                        Margin="5,0"
+                        TextColor="{StaticResource Tertiary}"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"/>
+                        <Label
+                        Text="jaa"
+                        Margin="5,0"
+                        TextColor="{StaticResource Tertiary}"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"/>
+                </HorizontalStackLayout>
             </Grid>
-
+            </Border>
         </VerticalStackLayout>
     </ScrollView>
 
