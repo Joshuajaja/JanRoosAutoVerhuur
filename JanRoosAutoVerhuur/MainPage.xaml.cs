@@ -1,12 +1,18 @@
-﻿namespace JanRoosAutoVerhuur
+﻿using JanRoosAutoVerhuur.Viewmodel;
+
+namespace JanRoosAutoVerhuur
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new MainViewModel();
+        }
+
+        private void FilterPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

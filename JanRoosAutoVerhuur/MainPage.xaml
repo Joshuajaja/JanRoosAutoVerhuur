@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JanRoosAutoVerhuur.MainPage"
+             xmlns:viewmodels="clr-namespace:JanRoosAutoVerhuur.Viewmodel"
+             x:DataType="viewmodels:MainViewModel"
              >
 
     <ScrollView>
@@ -9,34 +11,53 @@
             Padding="30,0"
             Spacing="25">
             <Border StrokeShape="RoundRectangle 10,10,10,10"
-                    Margin="1,30"
+                    Margin="0,30"
+                    HorizontalOptions="FillAndExpand"
+                    Padding="10,0"
                     Stroke="{StaticResource Tertiary}"
                     StrokeThickness="0"
                     BackgroundColor="{StaticResource Secondary}">
-                <Grid
-                  HorizontalOptions="Fill"
-                  HeightRequest="50">
-                    <HorizontalStackLayout>
+                <FlexLayout
+                  HorizontalOptions="FillAndExpand"
+                  Wrap="Wrap"
+                  Direction="Row"
+                  AlignItems="Center"
+                  JustifyContent="Center"
+                  HeightRequest="40">
+                    <HorizontalStackLayout HorizontalOptions="Center">
                         <Label
-                        Text="jaa"
-                        Margin="5,0"
+                        Text="All available models:"
+                        Margin="0,0,0,0"
+                        FontFamily="OpenSansBold"
                         TextColor="{StaticResource Tertiary}"
                         VerticalTextAlignment="Center"
                         HorizontalTextAlignment="Center"/>
+                        
                         <Label
-                        Text="jjhjhaa"
-                        Margin="5,0"
+                        Text="Filter:"
+                        Margin="10,0,10,0"
+                        FontFamily="OpenSansBold"
                         TextColor="{StaticResource Tertiary}"
                         VerticalTextAlignment="Center"
                         HorizontalTextAlignment="Center"/>
-                        <Label
-                        Text="jaa"
-                        Margin="5,0"
-                        TextColor="{StaticResource Tertiary}"
-                        VerticalTextAlignment="Center"
-                        HorizontalTextAlignment="Center"/>
-                </HorizontalStackLayout>
-            </Grid>
+
+                        <Picker x:Name="FilterPicker"
+                                BackgroundColor="{StaticResource Secondary}"
+                                TextColor="{StaticResource Tertiary}"
+                                FontFamily="OpenSansBoldItalic"
+                                Margin="0,10"
+                                HeightRequest="2"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Fill"
+                                SelectedIndexChanged="FilterPicker_SelectedIndexChanged">
+                            <Picker.Items>
+                                <x:String>Cat A</x:String>
+                                <x:String>Cat B</x:String>
+                                <x:String>Cat C</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </HorizontalStackLayout>
+            </FlexLayout>
             </Border>
         </VerticalStackLayout>
     </ScrollView>
