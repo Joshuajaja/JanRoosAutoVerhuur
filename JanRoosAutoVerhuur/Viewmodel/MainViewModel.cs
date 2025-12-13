@@ -7,24 +7,13 @@ namespace JanRoosAutoVerhuur.Viewmodel
 {
     public partial class MainViewModel : ObservableObject
     {
-
-        public MainViewModel()
-        {
-            items = new ObservableCollection<string>();
-        }
-
-
         [ObservableProperty]
-        ObservableCollection<string> items;
-
-        [ObservableProperty]
-        string text;
+        private int name = 0;
 
         [RelayCommand]
-        void Add() 
+        private void FilterSet()
         {
-        items.Add(Text);
-            Text = "Hello World";
+            Name++;
         }
     }
 }
