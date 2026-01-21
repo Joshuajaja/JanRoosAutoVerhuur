@@ -14,14 +14,16 @@
 
         <!-- Scrollable card grid -->
         <CollectionView
-            Grid.Row="1"
-            ItemsSource="{Binding Cars}"
-            Margin="10">
+        Grid.Row="1"
+        ItemsSource="{Binding Cars}"
+        SelectionMode="Single"
+        SelectionChanged="OnCarSelected"
+        Margin="10">
 
             <CollectionView.ItemsLayout>
                 <GridItemsLayout
-                    Orientation="Vertical"
-                    Span="{Binding CardSpan}" />
+            Orientation="Vertical"
+            Span="{Binding CardSpan}" />
             </CollectionView.ItemsLayout>
 
             <CollectionView.ItemTemplate>
@@ -29,7 +31,11 @@
                     <views:Kaartje />
                 </DataTemplate>
             </CollectionView.ItemTemplate>
+
         </CollectionView>
+
+
 
     </Grid>
 </ContentPage>
+

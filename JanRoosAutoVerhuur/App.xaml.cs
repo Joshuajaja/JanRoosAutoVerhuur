@@ -7,6 +7,7 @@ namespace JanRoosAutoVerhuur
         public App()
         {
             InitializeComponent();
+            MainPage = new AppShell();
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

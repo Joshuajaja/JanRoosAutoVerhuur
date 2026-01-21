@@ -70,6 +70,9 @@
 	  <MauiXaml Update="kaartje.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="CarDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Signup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

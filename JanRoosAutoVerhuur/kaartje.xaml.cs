@@ -1,16 +1,22 @@
+using JanRoosAutoVerhuur.Models;
+
 namespace JanRoosAutoVerhuur;
 
 public partial class Kaartje : ContentView
 {
+    public event EventHandler<Car> CardTapped;
+
     public Kaartje()
     {
         InitializeComponent();
-        SizeChanged += OnSizeChanged;
-    }
 
-    private void OnSizeChanged(object sender, EventArgs e)
-    {
-        // Force square shape
-        CardBorder.HeightRequest = Width;
+        var tap = new TapGestureRecognizer();
+        tap.Tapped += (s, e) =>
+        {
+            if (BindingContext is Car car)
+                CardTapped?.Invoke(this, car);
+        };
+
+        GestureRecognizers.Add(tap);
     }
 }
