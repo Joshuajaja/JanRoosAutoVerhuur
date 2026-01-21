@@ -22,7 +22,6 @@ namespace JanRoosAutoVerhuur
                     fonts.AddFont("OpenSans-LightItalic.ttf", "OpenSansLightItalic");
                     fonts.AddFont("OpenSans-SemiboldItalic.ttf", "OpenSansSemiboldItalic");
                 });
-
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
