@@ -2,43 +2,68 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JanRoosAutoVerhuur.Signup">
-    <VerticalStackLayout 
+    <ScrollView>
+        <VerticalStackLayout 
         Spacing="25"
         Padding="30,0">
 
-        <Border StrokeShape="RoundRectangle 10,10,10,10"
+            <Border StrokeShape="RoundRectangle 10,10,10,10"
                     Margin="0,30"
-                    HorizontalOptions="FillAndExpand"
                     Padding="10,0"
                     Stroke="{StaticResource Tertiary}"
                     StrokeThickness="0"
                     BackgroundColor="{StaticResource Secondary}">
-            <FlexLayout
-                  HorizontalOptions="FillAndExpand"
+                <FlexLayout
                   Wrap="Wrap"
                   Direction="Row"
                   AlignItems="Center"
                   JustifyContent="Center"
                   HeightRequest="40">
-                <HorizontalStackLayout HorizontalOptions="Center">
                     <Label
                     Text="Sign Up"
-                    Margin="0,0,0,0"
                     FontFamily="OpenSansBold"
                     TextColor="{StaticResource Tertiary}"
                     VerticalTextAlignment="Center"
-                    HorizontalTextAlignment="Center"/>
-                </HorizontalStackLayout>
-            </FlexLayout>
-        </Border>
-        
-        <Border Margin="25,0" 
+                    HorizontalTextAlignment="Center"
+                    />
+                </FlexLayout>
+            </Border>
+
+            <Border Margin="25,0" 
                 Stroke="{StaticResource Secondary}"
                 StrokeThickness="3" 
-                StrokeShape="RoundRectangle 10,10,10,10"> 
-        <Entry Placeholder="Username" 
+                StrokeShape="RoundRectangle 10,10,10,10">
+                <Entry Placeholder="Username" 
                Margin="20,10"
                x:Name="UsernameEntry"/>
-        </Border>
-    </VerticalStackLayout>
+            </Border>
+            <Border Margin="25,0" 
+                Stroke="{StaticResource Secondary}"
+                StrokeThickness="3" 
+                StrokeShape="RoundRectangle 10,10,10,10">
+                <Entry Placeholder="Password" 
+                Margin="20,10"
+                IsPassword="True"
+                x:Name="PasswordEntry"/>
+            </Border>
+            <Border Margin="25,0" 
+                Stroke="{StaticResource Secondary}"
+                StrokeThickness="3" 
+                StrokeShape="RoundRectangle 10,10,10,10">
+                <HorizontalStackLayout>
+                    <Label
+                    Margin="25,0,0,0"
+                    Text="Birthdate"
+                    FontFamily="OpenSansBold"
+                    TextColor="{StaticResource Tertiary}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    />
+                    <DatePicker
+                    Margin="20,10"
+                    x:Name="BirthdateDatepicker"/>
+                </HorizontalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
