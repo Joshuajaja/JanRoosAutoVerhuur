@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="JanRoosAutoVerhuur.Signup">
-    <ScrollView>
+             x:Class="JanRoosAutoVerhuur.Signup"
+             xmlns:viewmodels="clr-namespace:JanRoosAutoVerhuur.Viewmodel"
+             x:DataType="viewmodels:SignUpViewModel"
+             >
+<ScrollView>
         <VerticalStackLayout 
         Spacing="25"
         Padding="30,0">
 
-            <Border StrokeShape="RoundRectangle 10,10,10,10"
-                    Margin="0,30"
-                    Padding="10,0"
-                    Stroke="{StaticResource Tertiary}"
-                    StrokeThickness="0"
-                    BackgroundColor="{StaticResource Secondary}">
-                <FlexLayout
-                  Wrap="Wrap"
-                  Direction="Row"
-                  AlignItems="Center"
-                  JustifyContent="Center"
-                  HeightRequest="40">
-                    <Label
-                    Text="Sign Up"
-                    FontFamily="OpenSansBold"
-                    TextColor="{StaticResource Tertiary}"
-                    VerticalTextAlignment="Center"
-                    HorizontalTextAlignment="Center"
-                    />
-                </FlexLayout>
+            <Border StrokeShape="RoundRectangle 10"
+        Margin="0,30"
+        Padding="12"
+        BackgroundColor="{StaticResource Secondary}"
+        HorizontalOptions="Fill"
+        StrokeThickness="0">
+
+                <Label
+        Text="Sign Up Form"
+        FontFamily="OpenSansBold"
+        TextColor="{StaticResource Tertiary}"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        HorizontalTextAlignment="Center"
+        VerticalTextAlignment="Center"/>
             </Border>
 
             <Border Margin="25,0" 
                 Stroke="{StaticResource Secondary}"
                 StrokeThickness="3" 
                 StrokeShape="RoundRectangle 10,10,10,10">
-                <Entry Placeholder="Username" 
-               Margin="20,10"
-               x:Name="UsernameEntry"/>
+                <Entry Placeholder="{Binding UsernamePlaceholder}" 
+                       Margin="20,10"
+                       x:Name="UsernameEntry"
+                       Text="{Binding UsernameEntry}"/>
             </Border>
             <Border Margin="25,0" 
                 Stroke="{StaticResource Secondary}"
                 StrokeThickness="3" 
                 StrokeShape="RoundRectangle 10,10,10,10">
-                <Entry Placeholder="Password" 
+                <Entry Placeholder="{Binding PasswordPlaceholder}" 
                 Margin="20,10"
                 IsPassword="True"
-                x:Name="PasswordEntry"/>
+                x:Name="PasswordEntry"
+                Text="{Binding PasswordEntry}"/>
             </Border>
             <Border Margin="25,0" 
                 Stroke="{StaticResource Secondary}"
@@ -64,6 +64,13 @@
                     x:Name="BirthdateDatepicker"/>
                 </HorizontalStackLayout>
             </Border>
+            <Button 
+                BackgroundColor="{StaticResource Secondary}"
+                Text="Click here to sign up!"
+                TextColor="{StaticResource Tertiary}"
+                FontFamily="OpenSansBold"
+                Margin="30,0"
+                Clicked="Button_Clicked"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
