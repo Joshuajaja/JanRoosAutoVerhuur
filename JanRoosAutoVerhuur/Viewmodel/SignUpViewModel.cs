@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -8,10 +9,13 @@ namespace JanRoosAutoVerhuur.Viewmodel
     public partial class SignUpViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string usernameEntry = null;
+        private string usernameEntry;
 
         [ObservableProperty]
-        private string passwordEntry = null;
+        private string passwordEntry;
+
+        [ObservableProperty]
+        private DateTime birthdate;
 
         [ObservableProperty]
         private string usernamePlaceholder = "Username";
@@ -21,17 +25,28 @@ namespace JanRoosAutoVerhuur.Viewmodel
 
 
         [RelayCommand]
-        private void SignUpForm()
-        {
-            string? Password = PasswordEntry;
-            string? Username = UsernameEntry;
-
-            if (Username != null) { }
-            else if (Password != null) { }
-            else
+            private async Task SignUpForm()
             {
-                // database + insertion / Encryptie nog misschien
+                string? Password = PasswordEntry;
+                string? Username = UsernameEntry;
+                string? dbUser = "user"; //placeholder for retrieved user
+                string? dbPassword = "pass"; //placeholder for retrieved password
+                string nullErrorMessage = "One of your properties is wrong or not set.";
+
+            if (string.IsNullOrWhiteSpace(Username) ||
+                string.IsNullOrWhiteSpace(Password))
+            {
+                await Shell.Current.DisplayAlertAsync("Error",
+                    "Username and Password are required.",
+                    "OK");
+                await Shell.Current.GoToAsync("//Signup");
+                return;
             }
+            var userInfo = new Dictionary<string, object>
+            {
+                { "Username", Username }
+            };
+            await Shell.Current.GoToAsync($"//MainPage", userInfo);
+        }
         }
     }
-}

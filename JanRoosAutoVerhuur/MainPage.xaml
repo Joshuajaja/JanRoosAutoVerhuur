@@ -63,6 +63,9 @@
                     </HorizontalStackLayout>
             </FlexLayout>
             </Border>
+
+            <Label
+                Text="{Binding NameInfoText}"/>
         </VerticalStackLayout>
     </ScrollView>
 

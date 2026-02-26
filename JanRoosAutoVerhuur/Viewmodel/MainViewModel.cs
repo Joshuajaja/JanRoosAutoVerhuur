@@ -5,6 +5,7 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace JanRoosAutoVerhuur.Viewmodel
 {
+    [QueryProperty(nameof(NameInfoText), "Username")]
     public partial class MainViewModel : ObservableObject
     {
         [ObservableProperty]
@@ -15,5 +16,8 @@ namespace JanRoosAutoVerhuur.Viewmodel
         {
             Name++;
         }
+
+        [ObservableProperty]
+        private string nameInfoText;
     }
 }
