@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JanRoosAutoVerhuur.CarDetailPage"
+             Title="Car Details">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Image
+                Source="{Binding CarImage}"
+                HeightRequest="250"
+                Aspect="AspectFill" />
+
+            <Label
+                Text="{Binding CarName}"
+                FontSize="28"
+                FontAttributes="Bold" />
+
+            <Label
+                Text="{Binding DailyRate}"
+                FontSize="20" />
+
+            <Label
+                Text="{Binding AvailabilityText}"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="{Binding AvailabilityColor}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

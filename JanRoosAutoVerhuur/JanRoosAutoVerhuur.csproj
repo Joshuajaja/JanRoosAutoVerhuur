@@ -67,6 +67,12 @@
 	  <MauiXaml Update="Info.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="kaartje.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="CarDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Signup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -78,6 +84,12 @@
 	<ItemGroup>
 	  <Folder Include="controls\" />
 	  <Folder Include="Model\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="kaartje.xaml.cs">
+	    <DependentUpon>kaartje.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>
