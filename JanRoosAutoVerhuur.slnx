@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="JanRoosAutoVerhuur/JanRoosAutoVerhuur.csproj" />
+  <Project Path="JanRoosAutoVerhuur/JanRoosAutoVerhuur.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+  <Project Path="JanRoosAutoVerhuurAPI/JanRoosAutoVerhuurAPI.csproj" Id="13dcb5cc-0029-45cd-b958-0fcda978f2ac" />
 </Solution>
