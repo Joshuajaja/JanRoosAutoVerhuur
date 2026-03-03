@@ -24,7 +24,7 @@ namespace JanRoosAutoVerhuurAPI.Controllers
                 var client = new MongoClient(_settings.ConnectionString);
                 var db = client.GetDatabase(_settings.DatabaseName);
 
-                // Simple ping command
+                // Simple ping command aaaaaaaaaa
                 await db.RunCommandAsync((Command<dynamic>)"{ping:1}");
 
                 return Ok("MongoDB connection successful");
