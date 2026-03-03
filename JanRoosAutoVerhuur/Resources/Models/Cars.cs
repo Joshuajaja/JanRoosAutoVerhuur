@@ -6,16 +6,19 @@ namespace JanRoosAutoVerhuur.Models;
 
 public class Car
 {
-    public string CarName { get; set; }
-    public string DailyRate { get; set; }
-    public string CarImage { get; set; }
-    public bool IsAvailable { get; set; }
+    public string Id { get; set; }
+    public string Brand { get; set; }
+    public string Model { get; set; }
+    public string Type { get; set; }
+    public int Age { get; set; }
+    public int Seats { get; set; }
+    public bool Towbar { get; set; }
+    public string Color { get; set; }
+    public bool WinterTires { get; set; }
+    public bool RoofboxOption { get; set; }
+    public string Class { get; set; }
 
-    public string AvailabilityText =>
-        IsAvailable ? "Available" : "Not available";
-
-    public Color AvailabilityColor =>
-        IsAvailable ? Colors.Green : Colors.Red;
+    public string DisplayName => $"{Brand} {Model}";
 }
 
 
