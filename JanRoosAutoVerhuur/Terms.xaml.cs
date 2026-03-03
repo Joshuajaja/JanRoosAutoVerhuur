@@ -12,11 +12,7 @@ public partial class Terms : ContentPage
     {
         InitializeComponent();
 
-        Cars = new ObservableCollection<Car>
-        {
-            new Car { CarName = "BMW 3 Series", DailyRate = "€75 / day", CarImage = "bmw.png", IsAvailable = true },
-            new Car { CarName = "Audi A4", DailyRate = "€80 / day", CarImage = "audi.png", IsAvailable = false }
-        };
+
 
         UpdateSpan(DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density);
 

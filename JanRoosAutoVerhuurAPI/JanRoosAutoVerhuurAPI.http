@@ -1,0 +1,6 @@
+@JanRoosAutoVerhuurAPI_HostAddress = http://localhost:5202
+
+GET {{JanRoosAutoVerhuurAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
