@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using JanRoosAutoVerhuurAPI.Data;
 using JanRoosAutoVerhuurAPI.Models;
 
-namespace JanRoosAutoVerhuurAPI
+namespace JanRoosAutoVerhuurAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

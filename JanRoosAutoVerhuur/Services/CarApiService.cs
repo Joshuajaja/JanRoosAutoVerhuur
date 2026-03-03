@@ -1,5 +1,5 @@
-﻿using System.Net.Http.Json;
-using JanRoosAutoVerhuur.Models;
+﻿using JanRoosAutoVerhuur.Models;
+using System.Net.Http.Json;
 
 namespace JanRoosAutoVerhuur.Services;
 
@@ -17,4 +17,16 @@ public class CarApiService
     {
         return await _http.GetFromJsonAsync<List<Car>>("api/cars");
     }
+    public async Task<List<_Accounts>> GetAccountsAsync()
+    {
+    var accounts = await _http.GetFromJsonAsync<List<_Accounts>>("api/Accounts");
+        return accounts;
+    }
+    public async Task<_Accounts> CreateAccountAsync(_Accounts account)
+    {
+        var response = await _http.PostAsJsonAsync("api/Accounts", account);
+        response.EnsureSuccessStatusCode(); // throws exception if failed
+        return await response.Content.ReadFromJsonAsync<_Accounts>();
+    }
+
 }
