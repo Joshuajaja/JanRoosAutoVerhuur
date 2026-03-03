@@ -2,5 +2,27 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JanRoosAutoVerhuur.Map">
-
+    <Grid>
+        <Image
+            Source="map.png"
+            Aspect="AspectFill" />
+        <VerticalStackLayout
+            VerticalOptions="End"
+            Padding="30,0"
+            Spacing="30">
+            <Border StrokeShape="RoundRectangle 10,10,10,10"
+                    Margin="0,30"
+                    VerticalOptions="End"
+                    HorizontalOptions="FillAndExpand"
+                    Padding="10,0"
+                    Stroke="{StaticResource Tertiary}"
+                    StrokeThickness="0"
+                    BackgroundColor="{StaticResource Secondary}">
+                <Label
+                    Text="Car location:"
+                    Padding="30,0,0,25"
+                    VerticalTextAlignment="Center"/>
+            </Border>
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>

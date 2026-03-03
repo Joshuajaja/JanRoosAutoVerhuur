@@ -29,9 +29,8 @@ namespace JanRoosAutoVerhuur.Viewmodel
             {
                 string? Password = PasswordEntry;
                 string? Username = UsernameEntry;
-                string? dbUser = "user"; //placeholder for retrieved user
-                string? dbPassword = "pass"; //placeholder for retrieved password
-                string nullErrorMessage = "One of your properties is wrong or not set.";
+                PasswordEntry = null;
+                UsernameEntry = null;
 
             if (string.IsNullOrWhiteSpace(Username) ||
                 string.IsNullOrWhiteSpace(Password))
