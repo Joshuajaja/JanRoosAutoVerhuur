@@ -57,11 +57,23 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="controls\**" />
+	  <AndroidResource Remove="Models\**" />
 	  <AndroidResource Remove="Model\**" />
+	  <Compile Remove="controls\**" />
+	  <Compile Remove="Models\**" />
 	  <Compile Remove="Model\**" />
+	  <EmbeddedResource Remove="controls\**" />
+	  <EmbeddedResource Remove="Models\**" />
 	  <EmbeddedResource Remove="Model\**" />
+	  <MauiCss Remove="controls\**" />
+	  <MauiCss Remove="Models\**" />
 	  <MauiCss Remove="Model\**" />
+	  <MauiXaml Remove="controls\**" />
+	  <MauiXaml Remove="Models\**" />
 	  <MauiXaml Remove="Model\**" />
+	  <None Remove="controls\**" />
+	  <None Remove="Models\**" />
 	  <None Remove="Model\**" />
 	</ItemGroup>
 
@@ -95,11 +107,6 @@
 	  <MauiXaml Update="Terms.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="controls\" />
-	  <Folder Include="Models\" />
 	</ItemGroup>
 
 	<ItemGroup>

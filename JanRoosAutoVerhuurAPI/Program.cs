@@ -1,7 +1,12 @@
-using JanRoosAutoVerhuurAPI.Services;
+﻿using JanRoosAutoVerhuurAPI.Services;
 using JanRoosAutoVerhuurAPI.Settings;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using JanRoosAutoVerhuurAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<JanRoosAutoVerhuurAPIContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("JanRoosAutoVerhuurAPIContext") ?? throw new InvalidOperationException("Connection string 'JanRoosAutoVerhuurAPIContext' not found.")));
 
 // Add services to the container.
 
