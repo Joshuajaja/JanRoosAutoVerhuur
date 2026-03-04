@@ -104,5 +104,18 @@ namespace JanRoosAutoVerhuurAPI.Controllers
         {
             return _context.Accounts.Any(e => e.ID == id);
         }
+        [HttpGet("by-user/{username}")]
+        public async Task<ActionResult<Accounts>> GetAccountsByUsername(string username)
+        {
+            var accounts = await _context.Accounts
+                .FirstOrDefaultAsync(a => a.Username == username);
+
+            if (accounts == null)
+            {
+                return NotFound();
+            }
+
+            return accounts;
+        }
     }
 }
