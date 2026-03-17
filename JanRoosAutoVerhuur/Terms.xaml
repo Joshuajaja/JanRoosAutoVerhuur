@@ -14,11 +14,9 @@
 
         <!-- Scrollable card grid -->
         <CollectionView
-        Grid.Row="1"
-        ItemsSource="{Binding Cars}"
-        SelectionMode="Single"
-        SelectionChanged="OnCarSelected"
-        Margin="10">
+         Grid.Row="1"
+         ItemsSource="{Binding Cars}"
+         Margin="10">
 
             <CollectionView.ItemsLayout>
                 <GridItemsLayout

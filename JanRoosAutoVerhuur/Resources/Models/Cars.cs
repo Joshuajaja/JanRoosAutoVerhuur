@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +8,9 @@ namespace JanRoosAutoVerhuur.Models;
 
 public class Car
 {
-    public string Id { get; set; }
+    [BsonId]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public ObjectId Id { get; set; }
     public string Brand { get; set; }
     public string Model { get; set; }
     public string Type { get; set; }
