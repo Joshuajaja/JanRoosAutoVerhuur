@@ -15,6 +15,7 @@ public class CarApiService
 
     public async Task<List<Car>> GetCarsAsync()
     {
-        return await _http.GetFromJsonAsync<List<Car>>("api/cars");
+        var cars = await _http.GetFromJsonAsync<List<Car>>("api/cars");
+        return cars ?? new List<Car>();
     }
 }

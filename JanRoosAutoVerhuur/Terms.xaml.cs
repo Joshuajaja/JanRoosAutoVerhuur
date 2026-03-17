@@ -1,21 +1,27 @@
 using JanRoosAutoVerhuur.Models;
+using JanRoosAutoVerhuur.Services;
 using System.Collections.ObjectModel;
+using System.Linq;
+using Microsoft.Maui.Devices;
 
 namespace JanRoosAutoVerhuur;
 
 public partial class Terms : ContentPage
 {
-    public ObservableCollection<Car> Cars { get; set; }
+    public ObservableCollection<Car> Cars { get; set; } = new();
+
     public int CardSpan { get; set; }
+
+    private readonly CarApiService _carService = new();
 
     public Terms()
     {
         InitializeComponent();
 
-
-
+        // initialize span based on current display
         UpdateSpan(DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density);
 
+        // react to display changes (resize / orientation)
         DeviceDisplay.MainDisplayInfoChanged += (_, __) =>
         {
             UpdateSpan(DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density);
@@ -37,6 +43,18 @@ public partial class Terms : ContentPage
 
         OnPropertyChanged(nameof(CardSpan));
     }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        var carsFromApi = await _carService.GetCarsAsync();
+
+        Cars.Clear();
+        foreach (var car in carsFromApi)
+            Cars.Add(car);
+    }
+
     private async void OnCarSelected(object sender, SelectionChangedEventArgs e)
     {
         var selectedCar = e.CurrentSelection.FirstOrDefault() as Car;
@@ -49,5 +67,4 @@ public partial class Terms : ContentPage
         // clear selection so same card can be clicked again
         ((CollectionView)sender).SelectedItem = null;
     }
-
 }
