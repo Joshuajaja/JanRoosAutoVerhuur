@@ -32,7 +32,7 @@
             <ShellContent
                 ContentTemplate="{DataTemplate local:Signup}"
                 Route="Signup"/>
-        </Tab>\
+        </Tab>
         <Tab Title="Map" Icon="signup.png">
             <ShellContent
                 ContentTemplate="{DataTemplate local:Map}"
