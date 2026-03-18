@@ -27,7 +27,7 @@ namespace JanRoosAutoVerhuur.Viewmodel
 
 
         [RelayCommand]
-        private async Task SignUpForm()
+        private async Task LoginFormCommand()
         {
             string? Password = PasswordEntry;
             string? Username = UsernameEntry;
