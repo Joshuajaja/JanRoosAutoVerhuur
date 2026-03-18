@@ -1,16 +1,22 @@
 {
   "dependencies": {
-    "mssql3": {
-      "secretStore": "LocalSecretsFile",
-      "type": "mssql.onprem",
-      "connectionId": "ConnectionStrings:JanRoosAutoVerhuurAPIContext",
-      "dynamicId": null
-    },
     "secrets1": {
       "secretStore": null,
       "resourceId": null,
       "type": "secrets.user",
       "connectionId": null
+    },
+    "mssql1": {
+      "secretStore": "LocalSecretsFile",
+      "type": "mssql.onprem",
+      "connectionId": "ConnectionStrings:JanRoosAutoVerhuurAPIContext1",
+      "dynamicId": null
+    },
+    "mssql2": {
+      "secretStore": "LocalSecretsFile",
+      "type": "mssql.onprem",
+      "connectionId": "ConnectionStrings:JanRoosAutoVerhuurAPIContext",
+      "dynamicId": null
     }
   }
 }
