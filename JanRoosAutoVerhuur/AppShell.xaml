@@ -23,10 +23,20 @@
                 ContentTemplate="{DataTemplate local:Terms}"
                 Route="Terms"/>
         </Tab>
+        <Tab Title="Login" Icon="signup.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:LoginPage}"
+                Route="Login"/>
+        </Tab>
         <Tab Title="Signup" Icon="signup.png">
             <ShellContent
                 ContentTemplate="{DataTemplate local:Signup}"
                 Route="Signup"/>
+        </Tab>\
+        <Tab Title="Map" Icon="signup.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:Map}"
+                Route="Map"/>
         </Tab>
     </TabBar>
 </Shell>

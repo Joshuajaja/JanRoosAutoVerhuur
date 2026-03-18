@@ -2,29 +2,23 @@
 using System.ComponentModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using JanRoosAutoVerhuur.Services;
 
 namespace JanRoosAutoVerhuur.Viewmodel
 {
+    [QueryProperty(nameof(NameInfoText), "Username")]
     public partial class MainViewModel : ObservableObject
     {
-
-        public MainViewModel()
-        {
-            items = new ObservableCollection<string>();
-        }
-
-
         [ObservableProperty]
-        ObservableCollection<string> items;
-
-        [ObservableProperty]
-        string text;
+        private int name = 0;
 
         [RelayCommand]
-        void Add() 
+        private void FilterSet()
         {
-        items.Add(Text);
-            Text = "Hello World";
+            Name++;
         }
+
+        [ObservableProperty]
+        private string nameInfoText;
     }
 }

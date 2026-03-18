@@ -25,8 +25,12 @@
                   JustifyContent="Center"
                   HeightRequest="40">
                     <HorizontalStackLayout HorizontalOptions="Center">
+                        <Button
+                            Command="{Binding FilterSetCommand}">
+                            
+                        </Button>
                         <Label
-                        Text="All available models:"
+                        Text="{Binding Name}"
                         Margin="0,0,0,0"
                         FontFamily="OpenSansBold"
                         TextColor="{StaticResource Tertiary}"
@@ -59,6 +63,9 @@
                     </HorizontalStackLayout>
             </FlexLayout>
             </Border>
+
+            <Label
+                Text="{Binding NameInfoText}"/>
         </VerticalStackLayout>
     </ScrollView>
 

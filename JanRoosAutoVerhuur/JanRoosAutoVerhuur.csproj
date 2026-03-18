@@ -57,11 +57,34 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="controls\**" />
+	  <AndroidResource Remove="Models\**" />
+	  <AndroidResource Remove="Model\**" />
+	  <Compile Remove="controls\**" />
+	  <Compile Remove="Models\**" />
+	  <Compile Remove="Model\**" />
+	  <EmbeddedResource Remove="controls\**" />
+	  <EmbeddedResource Remove="Models\**" />
+	  <EmbeddedResource Remove="Model\**" />
+	  <MauiCss Remove="controls\**" />
+	  <MauiCss Remove="Models\**" />
+	  <MauiCss Remove="Model\**" />
+	  <MauiXaml Remove="controls\**" />
+	  <MauiXaml Remove="Models\**" />
+	  <MauiXaml Remove="Model\**" />
+	  <None Remove="controls\**" />
+	  <None Remove="Models\**" />
+	  <None Remove="Model\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="10.0.40" />
 		<PackageReference Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
 		<PackageReference Include="MongoDB.Driver" Version="3.7.0" />
+		<PackageReference Include="Microsoft.Maui.Maps" Version="10.0.40" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -74,17 +97,18 @@
 	  <MauiXaml Update="CarDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Map.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Signup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Terms.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="controls\" />
-	  <Folder Include="Model\" />
 	</ItemGroup>
 
 	<ItemGroup>

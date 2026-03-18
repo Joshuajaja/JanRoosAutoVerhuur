@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using JanRoosAutoVerhuur.Viewmodel;
 
 namespace JanRoosAutoVerhuur
 {
@@ -22,9 +23,12 @@ namespace JanRoosAutoVerhuur
                     fonts.AddFont("OpenSans-LightItalic.ttf", "OpenSansLightItalic");
                     fonts.AddFont("OpenSans-SemiboldItalic.ttf", "OpenSansSemiboldItalic");
                 });
-
+                builder.Services.AddTransient<MainPage>();
+                builder.Services.AddTransient<MainViewModel>();
+                builder.Services.AddTransient<Signup>();
+                builder.Services.AddTransient<SignUpViewModel>();
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
