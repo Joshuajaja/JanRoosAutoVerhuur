@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using JanRoosAutoVerhuurAPI.Models;
-using Microsoft.Extensions.Options;
 using JanRoosAutoVerhuurAPI.Settings;
+using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Hosting;
 
 namespace JanRoosAutoVerhuurAPI.Services
 {
@@ -54,7 +53,7 @@ namespace JanRoosAutoVerhuurAPI.Services
                     {
                         var json = File.ReadAllText(path);
                         // Deserialize to a simple POCO to avoid ObjectId deserialization issues,
-                        // then map to CarDto (generate new ObjectId for local items).
+                        // then map to CarDto (generate new ObjectId string for local items).
                         var backupItems = JsonSerializer.Deserialize<List<BackupCar>>(json, new JsonSerializerOptions
                         {
                             PropertyNameCaseInsensitive = true
@@ -65,7 +64,7 @@ namespace JanRoosAutoVerhuurAPI.Services
                         {
                             mapped.Add(new CarDto
                             {
-                                Id = ObjectId.GenerateNewId(),
+                                Id = ObjectId.GenerateNewId().ToString(),
                                 Brand = b.Brand,
                                 Model = b.Model,
                                 Type = b.Type,
