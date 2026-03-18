@@ -33,5 +33,10 @@
                 ContentTemplate="{DataTemplate local:Map}"
                 Route="Map"/>
         </Tab>
+        <Tab Title="Map" Icon="signup.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:LoginPage}"
+                Route="Login"/>
+        </Tab>
     </TabBar>
 </Shell>

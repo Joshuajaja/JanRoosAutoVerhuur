@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JanRoosAutoVerhuur.LoginPage"
+             xmlns:viewmodels="clr-namespace:JanRoosAutoVerhuur.Viewmodel"
+             x:DataType="viewmodels:LoginViewModel">
+
+    <ScrollView>
+        <VerticalStackLayout 
+        Spacing="25"
+        Padding="30,0">
+
+            <Border StrokeShape="RoundRectangle 10"
+        Margin="0,30"
+        Padding="12"
+        BackgroundColor="{StaticResource Secondary}"
+        HorizontalOptions="Fill"
+        StrokeThickness="0">
+
+                <Label
+        Text="Sign Up Form"
+        FontFamily="OpenSansBold"
+        TextColor="{StaticResource Tertiary}"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        HorizontalTextAlignment="Center"
+        VerticalTextAlignment="Center"/>
+            </Border>
+
+            <Border Margin="25,0" 
+                Stroke="{StaticResource Secondary}"
+                StrokeThickness="3" 
+                StrokeShape="RoundRectangle 10,10,10,10">
+                <Entry Placeholder="{Binding UsernamePlaceholder}" 
+                       Margin="20,10"
+                       x:Name="UsernameEntry"
+                       Text="{Binding UsernameEntry}"/>
+            </Border>
+            <Border Margin="25,0" 
+                Stroke="{StaticResource Secondary}"
+                StrokeThickness="3" 
+                StrokeShape="RoundRectangle 10,10,10,10">
+                <Entry Placeholder="{Binding PasswordPlaceholder}" 
+                Margin="20,10"
+                IsPassword="True"
+                x:Name="PasswordEntry"
+                Text="{Binding PasswordEntry}"/>
+            </Border>
+            <Border Margin="25,0" 
+                Stroke="{StaticResource Secondary}"
+                StrokeThickness="3" 
+                StrokeShape="RoundRectangle 10,10,10,10">
+                <HorizontalStackLayout>
+                    <Label
+                    Margin="25,0,0,0"
+                    Text="Birthdate"
+                    FontFamily="OpenSansBold"
+                    TextColor="{StaticResource Tertiary}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    />
+                    <DatePicker
+                    Margin="20,10"
+                    Date="{Binding Birthdate}"
+                    x:Name="BirthdateDatepicker"/>
+                </HorizontalStackLayout>
+            </Border>
+            <Button 
+                BackgroundColor="{StaticResource Secondary}"
+                Text="Click here to sign up!"
+                TextColor="{StaticResource Tertiary}"
+                FontFamily="OpenSansBold"
+                Margin="30,0"
+                Command="{Binding SignUpFormCommand}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

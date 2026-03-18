@@ -96,6 +96,9 @@
 	  <MauiXaml Update="CarDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Map.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
