@@ -3,10 +3,10 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using JanRoosAutoVerhuur.Models;
 using JanRoosAutoVerhuur.Services;
+using MongoDB.Bson.Serialization.Serializers;
 
 namespace JanRoosAutoVerhuur.Viewmodel
 {
-    [QueryProperty(nameof(NameInfoText), "Username")]
     public partial class MainViewModel : ObservableObject
     {
         private readonly CarApiService _carService = new();
@@ -21,20 +21,14 @@ namespace JanRoosAutoVerhuur.Viewmodel
             };
         }
 
-        [ObservableProperty]
-        private int name = 0;
+        public ObservableCollection<Car> Cars { get; set; } = [];
 
-        [ObservableProperty]
-        private string nameInfoText;
-
-        [RelayCommand]
-        private void FilterSet()
-        {
-            Name++;
-        }
-
-        public ObservableCollection<Car> Cars { get; set; } = new();
-
+        public ObservableCollection<string> Brands { get; set; } = [];
+        public ObservableCollection<string> Class { get; set; } = [];
+        public ObservableCollection<int> Seats { get; set; } = [];
+        public ObservableCollection<int> Age { get; set; } = [];
+        public ObservableCollection<string> Color { get; set; } = [];
+        public ObservableCollection<string> Type { get; set; } = [];
 
         [ObservableProperty]
         private int cardSpan;
@@ -55,10 +49,35 @@ namespace JanRoosAutoVerhuur.Viewmodel
         public async Task LoadCarsAsync()
         {
             var cars = await _carService.GetCarsAsync();
-
             Cars.Clear();
             foreach (var car in cars)
-                Cars.Add(car);
+            {
+                Cars.Add(car); // yes i know its alot of if functions but it works :3
+                if (!Brands.Contains(car.Brand))
+                {
+                    Brands.Add(car.Brand);
+                }
+                if (!Seats.Contains(car.Seats))
+                {
+                    Seats.Add(car.Seats);
+                }
+                if (!Type.Contains(car.Type))
+                {
+                    Type.Add(car.Type);
+                }
+                if (!Age.Contains(car.Age))
+                {
+                    Age.Add(car.Age);
+                }
+                if (!Color.Contains(car.Color))
+                {
+                    Color.Add(car.Color);
+                }
+                if (!Class.Contains(car.Class))
+                {
+                    Class.Add(car.Class);
+                }
+            }
         }
 
 

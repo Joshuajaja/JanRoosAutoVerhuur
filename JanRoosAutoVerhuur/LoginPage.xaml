@@ -52,7 +52,7 @@
                 TextColor="{StaticResource Tertiary}"
                 FontFamily="OpenSansBold"
                 Margin="30,0"
-                Command="{Binding LoginFormCommandCommand}"/>
+                Command="{Binding LoginFormCommand}"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
