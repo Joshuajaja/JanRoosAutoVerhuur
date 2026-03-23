@@ -1,13 +1,18 @@
 {
   "dependencies": {
-    "mssql3": {
-      "type": "mssql",
-      "connectionId": "ConnectionStrings:JanRoosAutoVerhuurAPIContext",
-      "dynamicId": null
-    },
     "secrets1": {
       "type": "secrets",
       "connectionId": null
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:JanRoosAutoVerhuurAPIContext1",
+      "dynamicId": null
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:JanRoosAutoVerhuurAPIContext",
+      "dynamicId": null
     }
   }
 }
