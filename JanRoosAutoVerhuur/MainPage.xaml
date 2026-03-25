@@ -34,8 +34,9 @@
                         VerticalTextAlignment="Center"
                         HorizontalTextAlignment="Center"/>
 
-                        <Picker x:Name="FilterPicker1"
+                        <Picker x:Name="BrandPicker"
                                 ItemsSource="{Binding Brands}"
+                                SelectedItem="{Binding SelectedBrand}"
                                 BackgroundColor="{StaticResource Secondary}"
                                 TextColor="{StaticResource Tertiary}"
                                 FontFamily="OpenSansBoldItalic"
@@ -44,8 +45,9 @@
                                 VerticalOptions="Center"
                                 HorizontalOptions="Fill">
                         </Picker>
-                        <Picker x:Name="FilterPicker2"
+                        <Picker x:Name="ColorPicker"
                                 ItemsSource="{Binding Color}"
+                                SelectedItem="{Binding SelectedColor}"
                                 BackgroundColor="{StaticResource Secondary}"
                                 TextColor="{StaticResource Tertiary}"
                                 FontFamily="OpenSansBoldItalic"
@@ -54,8 +56,9 @@
                                 VerticalOptions="Center"
                                 HorizontalOptions="Fill">
                         </Picker>
-                        <Picker x:Name="FilterPicker3"
+                        <Picker x:Name="SeatPicker"
                                 ItemsSource="{Binding Seats}"
+                                SelectedItem="{Binding SelectedSeat}"
                                 BackgroundColor="{StaticResource Secondary}"
                                 TextColor="{StaticResource Tertiary}"
                                 FontFamily="OpenSansBoldItalic"
@@ -64,8 +67,9 @@
                                 VerticalOptions="Center"
                                 HorizontalOptions="Fill">
                         </Picker>
-                        <Picker x:Name="FilterPicker4"
+                        <Picker x:Name="AgePicker"
                                 ItemsSource="{Binding Age}"
+                                SelectedItem="{Binding SelectedAge}"
                                 BackgroundColor="{StaticResource Secondary}"
                                 TextColor="{StaticResource Tertiary}"
                                 FontFamily="OpenSansBoldItalic"
@@ -74,8 +78,9 @@
                                 VerticalOptions="Center"
                                 HorizontalOptions="Fill">
                         </Picker>
-                        <Picker x:Name="FilterPicker5"
+                        <Picker x:Name="ItemPicker"
                                 ItemsSource="{Binding Type}"
+                                SelectedItem="{Binding SelectedType}"
                                 BackgroundColor="{StaticResource Secondary}"
                                 TextColor="{StaticResource Tertiary}"
                                 FontFamily="OpenSansBoldItalic"
@@ -84,8 +89,9 @@
                                 VerticalOptions="Center"
                                 HorizontalOptions="Fill">
                         </Picker>
-                        <Picker x:Name="FilterPicker6"
+                        <Picker x:Name="ClassPicker"
                                 ItemsSource="{Binding Class}"
+                                SelectedItem="{Binding SelectedClass}"
                                 BackgroundColor="{StaticResource Secondary}"
                                 TextColor="{StaticResource Tertiary}"
                                 FontFamily="OpenSansBoldItalic"
@@ -94,6 +100,15 @@
                                 VerticalOptions="Center"
                                 HorizontalOptions="Fill">
                         </Picker>
+                        <Button
+                            Text="ClearFilters"
+                            BackgroundColor="{StaticResource Tertiary}"
+                            Command="{Binding ClearFiltersCommand}"
+                            FontFamily="OpenSansBold"
+                            TextColor="{StaticResource Secondary}"
+                            VerticalOptions="Center"
+                            MaximumHeightRequest="10"
+                            FontSize="Micro"/>
                     </HorizontalStackLayout>
                 </FlexLayout>
             </Border>

@@ -23,6 +23,16 @@ namespace JanRoosAutoVerhuur.Viewmodel
 
         public ObservableCollection<Car> Cars { get; set; } = [];
 
+        private List<Car> AllCars = new();
+
+
+        [ObservableProperty] private string? selectedBrand;
+        [ObservableProperty] private string? selectedType;
+        [ObservableProperty] private int? selectedSeat;
+        [ObservableProperty] private int? selectedAge;
+        [ObservableProperty] private string? selectedColor;
+        [ObservableProperty] private string? selectedClass;
+
         public ObservableCollection<string> Brands { get; set; } = [];
         public ObservableCollection<string> Class { get; set; } = [];
         public ObservableCollection<int> Seats { get; set; } = [];
@@ -48,9 +58,9 @@ namespace JanRoosAutoVerhuur.Viewmodel
         [RelayCommand]
         public async Task LoadCarsAsync()
         {
-            var cars = await _carService.GetCarsAsync();
+            AllCars = await _carService.GetCarsAsync();
             Cars.Clear();
-            foreach (var car in cars)
+            foreach (var car in AllCars)
             {
                 Cars.Add(car); // yes i know its alot of if functions but it works :3
                 if (!Brands.Contains(car.Brand))
@@ -80,6 +90,45 @@ namespace JanRoosAutoVerhuur.Viewmodel
             }
         }
 
+        [RelayCommand]
+        void ClearFilters()
+        {
+            SelectedAge = null;
+            SelectedBrand = null;
+            SelectedClass = null;
+            SelectedSeat = null;
+            SelectedType = null;
+            SelectedColor = null;
+            Cars.Clear();
+            foreach (var car in AllCars)
+            {
+                Cars.Add(car);
+            }
+        }
+        void FilterCars()
+        { 
+            var carsFilter = AllCars.Where(car =>
+                (string.IsNullOrEmpty(SelectedBrand) || car.Brand == SelectedBrand) &&
+                (string.IsNullOrEmpty(SelectedType) || car.Type == SelectedType) &&
+                (SelectedSeat == null || car.Seats == SelectedSeat) &&
+                (SelectedAge == null || car.Age == SelectedAge) &&
+                (string.IsNullOrEmpty(SelectedColor) || car.Color == SelectedColor) &&
+                (string.IsNullOrEmpty(SelectedClass) || car.Class == SelectedClass)
+            ).ToList();
+
+            Cars.Clear();
+            foreach (var car in carsFilter)
+            {
+                Cars.Add(car);
+            }
+        }
+
+        partial void OnSelectedBrandChanged(string oldValue, string newValue) => FilterCars();
+        partial void OnSelectedTypeChanged(string oldValue, string newValue) => FilterCars();
+        partial void OnSelectedSeatChanged(int? oldValue, int? newValue) => FilterCars();
+        partial void OnSelectedAgeChanged(int? oldValue, int? newValue) => FilterCars();
+        partial void OnSelectedColorChanged(string oldValue, string newValue) => FilterCars();
+        partial void OnSelectedClassChanged(string oldValue, string newValue) => FilterCars();
 
         [RelayCommand]
         private async Task CarTapped(Car car)
