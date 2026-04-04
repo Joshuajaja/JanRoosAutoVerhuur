@@ -134,6 +134,7 @@ namespace JanRoosAutoVerhuur.Viewmodel
         private async Task CarTapped(Car car)
         {
             if (car == null)
+  
                 return;
 
             await Shell.Current.GoToAsync($"CarDetailPage?carId={car.Id}");

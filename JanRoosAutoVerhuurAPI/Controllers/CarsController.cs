@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using JanRoosAutoVerhuurAPI.Models;
 using JanRoosAutoVerhuurAPI.Services;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace JanRoosAutoVerhuurAPI.Controllers
 {

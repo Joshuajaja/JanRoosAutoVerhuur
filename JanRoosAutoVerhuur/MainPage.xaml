@@ -5,6 +5,7 @@
              xmlns:viewmodels="clr-namespace:JanRoosAutoVerhuur.Viewmodel"
              xmlns:views="clr-namespace:JanRoosAutoVerhuur"
              x:DataType="viewmodels:MainViewModel"
+             x:Name="mainpage"
              >
 
     <ScrollView>
@@ -128,7 +129,8 @@
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <views:Kaartje />
+                            <views:Kaartje 
+                                TapCommand="{Binding BindingContext.CarTappedCommand, Source={x:Reference mainpage}}"/>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
 
